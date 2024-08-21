@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./general";
+@import "./block/header";
+@import "./block/heroSlider";
+@import "./block/home";
+@import "./block/homeCategory";
+@import "./block/tab";
+@import "./block/diskaunt";
+@import "./block/footer";
+@import "./block/pageTopTitle";
+@import "./block/spinner";
+@import "./block/map";

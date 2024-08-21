@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.map_container {
+  position: relative;
+  padding: 140px 0 100px 0;
+  .map_bg_img {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    background-image: url("https://kengmakon.uz/local/templates/km/media/images/dot.png");
+    // background-size: cover;
+    background-repeat: repeat;
+    height: 250px;
+  }
+  .map_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    .map_des {
+      z-index: 10;
+      display: flex;
+      // justify-content: center;
+      // align-items: center;
+      flex-direction: column;
+      // transform: translateY(20%);
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        letter-spacing: 5px;
+      }
+      p {
+        padding: 20px 0;
+        width: 80%;
+      }
+      img {
+        height: 200px;
+        // object-fit: cover;
+      }
+    }
+    .map {
+      z-index: 10;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .map_container {
+    padding: 100px 0 !important;
+    .map_content {
+      grid-template-columns: repeat(1, 1fr) !important;
+      .map_des {
+        transform: translateY(0) !important;
+        h2 {
+          font-weight: 600 !important;
+        }
+      }
+      .map {
+        margin-top: 40px;
+      }
+    }
+  }
+}

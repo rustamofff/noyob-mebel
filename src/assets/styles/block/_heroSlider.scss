@@ -1,0 +1,178 @@
+// .hero_container {
+//   // margin-top: 50px;
+//   .swiper {
+//     width: 100%;
+//     height: 87vh;
+
+//     .hero_card {
+//       .hero_img {
+//         width: 100%;
+//         height: 100%;
+//         img {
+//           width: 100%;
+//           height: 100%;
+//         }
+//       }
+//     }
+
+//     .autoplay-progress {
+//       position: absolute;
+//       right: 16px;
+//       bottom: 16px;
+//       z-index: 10;
+//       width: 48px;
+//       height: 48px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       font-weight: bold;
+//       color: var(--swiper-theme-color);
+
+//       svg {
+//         --progress: 0;
+//         position: absolute;
+//         left: 0;
+//         top: 0px;
+//         z-index: 10;
+//         width: 100%;
+//         height: 100%;
+//         stroke-width: 4px;
+//         stroke: var(--swiper-theme-color);
+//         fill: none;
+//         stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+//         stroke-dasharray: 125.6;
+//         transform: rotate(-90deg);
+//       }
+//     }
+//   }
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.hero_container {
+  .swiper {
+    width: 100%;
+    height: 87vh; // Butun ekran balandligi
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .hero_card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .hero_img {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .hero_overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4); // Qoraytiruvchi overlay
+        }
+
+        .hero_content {
+          position: absolute;
+          bottom: 120px;
+          left: 50px;
+          color: white;
+          width: 70%;
+
+          .hero_title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+          }
+
+          .hero_view {
+            display: flex;
+            // align-items: center;
+            font-weight: 600;
+            gap: 5px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 15px 0;
+          }
+          .hero_view:hover {
+            .hero_view_icon {
+              margin-left: 10px !important;
+              transition: 0.4s;
+            }
+          }
+        }
+      }
+    }
+    .autoplay-progress {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--swiper-theme-color);
+
+      svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 4px;
+        stroke: var(--swiper-theme-color);
+        fill: none;
+        stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+      }
+    }
+
+    // Tugmalarni joylash uchun yangi container yaratiladi
+    .swiper-controls {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 30px;
+      bottom: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000000;
+
+      .custom-button {
+        color: #b9b9b9;
+        // background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 50px;
+      }
+      .custom-button :hover {
+        color: #fff;
+        transition: 0.2s;
+      }
+    }
+  }
+}

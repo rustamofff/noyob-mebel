@@ -1,0 +1,27 @@
+.home_diskaunt_container {
+  .dikaunt_title {
+    margin-top: 50px;
+    // padding: 20px 0 30px 0;
+    width: 100%;
+    font-weight: 600;
+    background-image: url("https://kengmakon.uz/local/templates/km/media/images/dot.png");
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: 915px) {
+  .dikaunt_title {
+    h2 {
+      font-size: 2rem !important;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .dikaunt_title {
+    h2 {
+      font-size: 1.8rem !important;
+    }
+  }
+}

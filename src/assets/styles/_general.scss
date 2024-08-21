@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.outlet {
+  padding: 0 50px;
+}
+
+.category_card {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+@media screen and (max-width: 1020px) {
+  .outlet {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .outlet {
+    padding: 0 20px;
+  }
+}
