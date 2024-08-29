@@ -125,7 +125,7 @@ export default function HeroSlider() {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        {apiData?.map((dataSlider) => {
+        {apiData?.response?.map((dataSlider) => {
           return (
             <SwiperSlide>
               <div className="hero_card" key={dataSlider.id}>

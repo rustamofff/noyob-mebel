@@ -56,6 +56,68 @@ export default function Details() {
     setMainImage(src);
   };
 
+  // // telegram url function
+  // const handleClick = () => {
+  //   // Telegram usernamingizni o'zgartiring
+  //   const telegramUsername = "nodirrustamov";
+  //   const telegramUrl = `https://t.me/${telegramUsername}`;
+
+  //   // Telegramga o'tkazish
+  //   window.open(telegramUrl, "_blank");
+  // };
+
+  // // telegram url rasmSend function
+  // const handleSendImage = () => {
+  //   const telegramUsername = "nodirrustamov";
+  //   const telegramUrl = `https://t.me/${telegramUsername}`;
+
+  //   const message = `Salom! Ushbu rasmni siz bilan bo'lishmoqchiman: ${mainImage}`;
+
+  //   const sendUrl = `https://t.me/share/url?url=${encodeURIComponent(
+  //     mainImage
+  //   )}&text=${encodeURIComponent(message)}`;
+
+  //   window.open(sendUrl, "_blank");
+  // };
+
+  // telegram url rasmni jo'natish function
+  // const handleSendImage = () => {
+  //   // Telegram usernamingizni o'zgartiring
+  //   const telegramUsername = "nodirrustamov";
+
+  //   // Yuboriladigan xabar va rasm manzili
+  //   const message = `Salom! Ushbu rasmni siz bilan bo'lishmoqchiman: ${mainImage}`;
+
+  //   // Telegram URL orqali rasm yuborish
+  //   const sendUrl = `https://t.me/share/url?url=${encodeURIComponent(
+  //     mainImage
+  //   )}&text=${encodeURIComponent(message)}`;
+
+  //   // Telegramga o'tkazish
+  //   window.open(sendUrl, "_blank");
+  // };
+
+  // const handleSendLink = () => {
+  //   const telegramUrl = `https://t.me/${"abdullox_islomov"}?text=${mainImage}`;
+  //   window.open(telegramUrl, "_blank");
+  // };
+
+  const handleSendLink = () => {
+    const link = mainImage; // `mainImage` o'zgaruvchisini to'g'ridan-to'g'ri olish
+    const message = detailData?.name; // `detailData.title` o'zgaruvchisidan to'g'ri foydalanish
+    const detail = detailData?.description;
+    const username = "ABDUMUTAL_111";
+    const height = detailData?.boyi || "❌";
+    const width = detailData?.eni || "❌";
+    const price = detailData?.price;
+    const discount = detailData?.skidka ? "✅" : "❌";
+    const telegramUrl = `https://t.me/${username}?text=${encodeURIComponent(
+      `${message}\n${detail}\nBo'yi: ${height}\nEni: ${width}\nNarxi: ${price} so'm\nChegirma: ${discount}\nLink: ${link}`
+    )}`;
+
+    window.open(telegramUrl, "_blank");
+  };
+
   return (
     <div>
       <div
@@ -104,7 +166,7 @@ export default function Details() {
 
               <div className="mb-4">
                 <span className="text-2xl font-bold mr-2">
-                  {detailData.price} UZS
+                  {detailData.price} so'm
                 </span>
                 {detailData.skidka && (
                   <span className="text-gray-500 line-through">
@@ -115,12 +177,11 @@ export default function Details() {
               </div>
               <p className="text-gray-700 mb-6">{detailData.description}</p>
 
-              <button className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
-                {apiData?.map((detailContaact) => {
-                  return (
-                    <a href={`tel:${detailContaact.telefon}`}>Bog'lanish</a>
-                  );
-                })}
+              <button
+                className="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+                onClick={handleSendLink}
+              >
+                <p>Sotuvchiga rasmni yuborish</p>
               </button>
             </div>
           </div>

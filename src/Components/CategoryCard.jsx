@@ -62,7 +62,9 @@ export default function CategoryCard({ apiData, category }) {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Distinctio, incidunt!
               </p> */}
-                <h2 class="font-semibold mb-5">{data.price} so'm</h2>
+                <h2 class="font-semibold mb-5 text-red-500">
+                  {data.price} so'm
+                </h2>
                 <button class="p-2 px-6 bg-blue-500 text-white rounded-md hover:bg-blue-600">
                   <Link to={`/details/${category}/${data.id}`}>Ko'rish</Link>
                 </button>

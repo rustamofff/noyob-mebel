@@ -97,7 +97,7 @@ export default function Header() {
         </div>
         <div className="header_element">
           <div className="header_icons">
-            {apiData?.map((contact) => {
+            {apiData?.response?.map((contact) => {
               return (
                 <span>
                   <a
@@ -152,7 +152,11 @@ export default function Header() {
                   </span>
                 </div>
                 {/* <div className="sidebar_item">Kategoriya4</div> */}
-                <div className="sidebar_call">+998 849 04 58</div>
+                {apiData?.response?.map((contactSidebar) => {
+                  return (
+                    <div className="sidebar_call">{contactSidebar.telefon}</div>
+                  );
+                })}
               </>
             ) : (
               <div className="category_sidebar open">

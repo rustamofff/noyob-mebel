@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function YotoqDiskaunt({ apiData, category }) {
   return (
     <>
-      <section class="bg-white dark:bg-gray-900 mb-10">
+      <section class="bg-white  mb-10">
         <div class="container px-3  mx-auto">
           <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
             {/* card */}

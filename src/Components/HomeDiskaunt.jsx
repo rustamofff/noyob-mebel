@@ -17,12 +17,17 @@ export default function HomeDiskaunt() {
       .get(`${BaseUrl}/category/kravat/`)
       .then((response) => {
         console.log("Kelgan ma'lumot:", response.data);
+
+        // Agar response.data massiv bo'lmasa, uni massivga aylantirish
+        const dataArray = Array.isArray(response.data)
+          ? response.data
+          : [response.data];
+
         // Faqat skidka true bo'lgan ma'lumotlarni ajratib olish
-        const filteredData = response.data.filter(
-          (item) => item.skidka === true
-        );
+        const filteredData = dataArray.filter((item) => item.skidka === true);
         setApiDataYotoq(filteredData);
-        console.log("Kelgan ma'lumot:skidka", response.data);
+        console.log("Kelgan ma'lumot: skidka", filteredData);
+
         setIsLoading(false);
       })
       .catch((error) => {

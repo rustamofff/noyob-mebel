@@ -20,8 +20,18 @@ export default function Map() {
           />
         </div>
         <div className="map">
+          {/* <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d561.933213115911!2d69.16312205407445!3d41.2506911935557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suz!2s!4v1724655221384!5m2!1suz!2s"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe> */}
+          41.250756169473405, 69.16386167855818
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d944.0474003043071!2d69.28320783650307!3d41.30532083747785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b73b9820993%3A0x3c81adf1b148c23d!2sO&#39;z%20R%20FA%20Tarix%20instituti!5e0!3m2!1suz!2s!4v1724159887723!5m2!1suz!2s"
+            src="https://www.google.com/maps?q=41.250756169473405, 69.16386167855818&hl=uz&z=16&output=embed"
             width="100%"
             height="450"
             style={{ border: 0 }}
