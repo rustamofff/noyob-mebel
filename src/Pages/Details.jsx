@@ -56,52 +56,8 @@ export default function Details() {
     setMainImage(src);
   };
 
-  // // telegram url function
-  // const handleClick = () => {
-  //   // Telegram usernamingizni o'zgartiring
-  //   const telegramUsername = "nodirrustamov";
-  //   const telegramUrl = `https://t.me/${telegramUsername}`;
 
-  //   // Telegramga o'tkazish
-  //   window.open(telegramUrl, "_blank");
-  // };
-
-  // // telegram url rasmSend function
-  // const handleSendImage = () => {
-  //   const telegramUsername = "nodirrustamov";
-  //   const telegramUrl = `https://t.me/${telegramUsername}`;
-
-  //   const message = `Salom! Ushbu rasmni siz bilan bo'lishmoqchiman: ${mainImage}`;
-
-  //   const sendUrl = `https://t.me/share/url?url=${encodeURIComponent(
-  //     mainImage
-  //   )}&text=${encodeURIComponent(message)}`;
-
-  //   window.open(sendUrl, "_blank");
-  // };
-
-  // telegram url rasmni jo'natish function
-  // const handleSendImage = () => {
-  //   // Telegram usernamingizni o'zgartiring
-  //   const telegramUsername = "nodirrustamov";
-
-  //   // Yuboriladigan xabar va rasm manzili
-  //   const message = `Salom! Ushbu rasmni siz bilan bo'lishmoqchiman: ${mainImage}`;
-
-  //   // Telegram URL orqali rasm yuborish
-  //   const sendUrl = `https://t.me/share/url?url=${encodeURIComponent(
-  //     mainImage
-  //   )}&text=${encodeURIComponent(message)}`;
-
-  //   // Telegramga o'tkazish
-  //   window.open(sendUrl, "_blank");
-  // };
-
-  // const handleSendLink = () => {
-  //   const telegramUrl = `https://t.me/${"abdullox_islomov"}?text=${mainImage}`;
-  //   window.open(telegramUrl, "_blank");
-  // };
-
+//  telegramga jo'natish
   const handleSendLink = () => {
     const link = mainImage; // `mainImage` o'zgaruvchisini to'g'ridan-to'g'ri olish
     const message = detailData?.name; // `detailData.title` o'zgaruvchisidan to'g'ri foydalanish

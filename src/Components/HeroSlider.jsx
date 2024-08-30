@@ -135,12 +135,6 @@ export default function HeroSlider() {
                 <div className="hero_overlay"></div>
                 <div className="hero_content">
                   <h2 className="hero_title">{dataSlider.title}</h2>
-                  {/* <p className="hero_view">
-                    <span>Ko'rish</span>
-                    <span className="hero_view_icon">
-                      <SlArrowRight />
-                    </span>
-                  </p> */}
                 </div>
               </div>
             </SwiperSlide>

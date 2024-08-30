@@ -44,21 +44,7 @@ export default function Footer() {
       });
   };
 
-  // function openAlertCard1() {
-  //   const cardNumber = "9860 1201 0128 3857";
-  //   const cardHolder = "Nodir Rustamov";
-  //   const message = `${cardNumber}\n${cardHolder}\n\nKarta raqami nusxalandi!`;
 
-  //   // Karta raqamini clipboardga nusxalash
-  //   navigator.clipboard
-  //     .writeText(cardNumber)
-  //     .then(() => {
-  //       alert(message);
-  //     })
-  //     .catch((err) => {
-  //       console.error("Nusxalashda xato yuz berdi:", err);
-  //     });
-  // }
 
   const [apiData, setApiData] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // isLoading holatini qo'shdik
