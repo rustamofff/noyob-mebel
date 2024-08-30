@@ -161,8 +161,12 @@ export default function Details() {
             {/* <!-- Product Details --> */}
             <div className="w-full md:w-1/2 px-4">
               <h2 className="text-3xl font-bold mb-2">{detailData.name}</h2>
-              <p className="text-gray-600 mb-4">Boyi: {detailData.boyi}</p>
-              <p className="text-gray-600 mb-4">Eni: {detailData.eni}</p>
+              {detailData.boyi && (
+                <p className="text-gray-600 mb-4">Boyi: {detailData.boyi}</p>
+              )}
+              {detailData.eni && (
+                <p className="text-gray-600 mb-4">Eni: {detailData.eni}</p>
+              )}
 
               <div className="mb-4">
                 <span className="text-2xl font-bold mr-2">

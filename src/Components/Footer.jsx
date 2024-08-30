@@ -4,6 +4,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { BiLogoTelegram } from "react-icons/bi";
 import BaseUrl from "../config/url.jsx";
+import { HiMiniCreditCard } from "react-icons/hi2";
 
 import axios from "axios";
 
@@ -124,17 +125,10 @@ export default function Footer() {
           </div>
           <div className="footer_contact">
             <h2>Kontaktlar</h2>
-            {apiData?.response?.map((dataConnect) => {
+            {apiData?.map((dataConnect) => {
               return (
                 <div className="footer_contact_des">
                   <p>{dataConnect.telefon}</p>
-                  {apiDataLocation?.map((dataLocation) => {
-                    return (
-                      <p className="footer_contact_adress">
-                        {dataLocation.title}
-                      </p>
-                    );
-                  })}
 
                   <p className="footer_contact_email">{dataConnect.email}</p>
                 </div>
@@ -147,7 +141,7 @@ export default function Footer() {
         <div className="footer_bottom">
           <div className="footer_social_content">
             <h2>Ijtimoiy tarmoqlar</h2>
-            {apiData?.response?.map((dataSokial) => {
+            {apiData?.map((dataSokial) => {
               return (
                 <div className="footer_social">
                   <a
@@ -179,10 +173,9 @@ export default function Footer() {
             <h2>Kartalar</h2>
             <div className="footer_card">
               <div className="footer_card_img" onClick={openModal}>
-                <img
-                  src="https://kengmakon.uz/local/templates/km/media/images/socials/visa.png"
-                  alt="Visa"
-                />
+                <span>
+                  <HiMiniCreditCard />
+                </span>
               </div>
 
               {isModalOpen && (
