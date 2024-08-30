@@ -41,10 +41,21 @@ export default function Footer() {
       })
       .catch((err) => {
         console.error("Nusxalashda xato yuz berdi:", err);
+        // Fallback to execCommand if clipboard API fails
+        const textarea = document.createElement("textarea");
+        textarea.value = cardNumber;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand("copy");
+          alert("Karta raqami nusxalandi!");
+          closeModal();
+        } catch (err) {
+          console.error("Fallback nusxalashda xato yuz berdi:", err);
+        }
+        document.body.removeChild(textarea);
       });
   };
-
-
 
   const [apiData, setApiData] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // isLoading holatini qo'shdik
@@ -63,22 +74,22 @@ export default function Footer() {
       });
   }, []);
 
-  const [apiDataLocation, setApiDataLocation] = useState([]);
-  const [isLoadingLokation, setIsLoadingLokation] = useState(true); // isLoading holatini qo'shdik
+  // const [apiDataLocation, setApiDataLocation] = useState([]);
+  // const [isLoadingLokation, setIsLoadingLokation] = useState(true); // isLoading holatini qo'shdik
 
-  useEffect(() => {
-    axios
-      .get(`${BaseUrl}/about/location/`)
-      .then((response) => {
-        console.log("Kelgan ma'lumot:location", response.data);
-        setApiDataLocation(response.data);
-        setIsLoadingLokation(false); // Ma'lumotlar yuklandi, loadingni to'xtatish
-      })
-      .catch((error) => {
-        console.error("Xatolik:", error);
-        setIsLoadingLokation(false); // Xatolik yuz berganda ham loadingni to'xtatish
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${BaseUrl}/about/location/`)
+  //     .then((response) => {
+  //       console.log("Kelgan ma'lumot:location", response.data);
+  //       setApiDataLocation(response.data);
+  //       setIsLoadingLokation(false); // Ma'lumotlar yuklandi, loadingni to'xtatish
+  //     })
+  //     .catch((error) => {
+  //       console.error("Xatolik:", error);
+  //       setIsLoadingLokation(false); // Xatolik yuz berganda ham loadingni to'xtatish
+  //     });
+  // }, []);
 
   return (
     <>
@@ -179,18 +190,6 @@ export default function Footer() {
                   </div>
                 </div>
               )}
-              {/* <div className="footer_card_img" onClick={openAlertCard1}>
-                <img
-                  src="https://kengmakon.uz/local/templates/km/media/images/socials/master-card.png"
-                  alt=""
-                />
-              </div>
-              <div className="footer_card_img" onClick={openAlertCard1}>
-                <img
-                  src="	https://kengmakon.uz/local/templates/km/media/images/socials/visa.png"
-                  alt=""
-                />
-              </div> */}
             </div>
           </div>
         </div>

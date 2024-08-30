@@ -23,7 +23,7 @@ export default function YotoqDiskaunt({ apiData, category }) {
                   <div class="diskaunt_card_des flex flex-col justify-between px-3 py-6  lg:mx-6">
                     <a
                       href=""
-                      class="text-xl font-semibold text-gray-800 hover:underline dark:text-white "
+                      class="text-xl font-semibold text-gray-800 hover:underline  "
                     >
                       <Link to={`/details/${category}/${diskauntData.id}`}>
                         {diskauntData.name}
