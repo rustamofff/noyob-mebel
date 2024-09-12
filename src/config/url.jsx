@@ -1,2 +1,2 @@
-const baseURL = "http://subdomain.noyobmebel.uz";
+const baseURL = "https://subdomain.noyobmebel.uz";
 export default baseURL;
